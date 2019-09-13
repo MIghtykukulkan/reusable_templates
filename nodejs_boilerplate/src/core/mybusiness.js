@@ -15,16 +15,16 @@ var getoptions = {
         "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
     },
 }
-// check the dependency module 'request' injected instead of requireing here, use the same pattern in other business methods
+
+function createNewUser(){
+    
+}
 
 function findGitUsers(){
 
-    return new Promise(async (resolve, reject)=>{
-  
-        let error, result, finaljson;
-        
+    return new Promise(async (resolve, reject)=>{  
+        let error, result, finaljson;        
         [error, result] = await to(request('https://api.github.com/users?since=135',getoptions));
-        
         if(error){
             reject(error);
         }
