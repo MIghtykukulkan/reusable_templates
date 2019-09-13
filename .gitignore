@@ -1,2 +1,4 @@
 /node_modules
+/nodejs_boilerplate/node_modules
+/socketio/node_modules
 /uploads
