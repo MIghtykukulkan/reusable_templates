@@ -1,17 +1,18 @@
 //const mysqldb = require('./src/adapters/mysqldb')
 
-const mybusiness = require('../src/core/mybusiness');
+const mybusiness = require('../core/mybusiness');
 const to = require('await-to-js').default;
 var fs = require('fs');
-var db = require('../src/adapters/mongodb');
+var db = require('../adapters/mongodb');
 const passport = require('passport');
-require('../src/services/passport')
+require('../services/passport')
 
 
 module.exports = router => {
 
- 
+    //example of a secured route
     router.get('/',passport.authenticate('jwt', { session: false }), async (req, res) => res.end('test service!'));
+    
 
     router.get('/findgitusers',async (req,res)=>{
         let error, result, finaljson;

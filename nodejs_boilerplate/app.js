@@ -15,9 +15,10 @@ app.use(busboy());
 //connecting mongo
 mongoose.connect(configjson.mongo.mongoURI, { useNewUrlParser: true });
 
-require('./routes/user')(app);
-require('./routes/routes')(app);
-
+require('./src/routes/user')(app);
+require('./src/routes/routes')(app);
+require('./src/routes/auth')(app);
+require('./src/routes/admin')(app);
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
