@@ -8,9 +8,7 @@ const busboy = require('connect-busboy')
 const mongoose = require('mongoose');
 const configjson = require('./config/dbconfig.json');
 app.use(cors());
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(busboy()); 
 
