@@ -9,6 +9,10 @@ module.exports = router => {
         //save the user in DB
     });
 
+    router.post('/forgotPassword', async(req, res)=>{
+        //businesslogic for password reset
+    })
+
     router.post('/sign-in', function (req, res, next) {
         passport.authenticate('local', {session: false}, (err, user, info) => {
             console.log("user:",err, user, info)
