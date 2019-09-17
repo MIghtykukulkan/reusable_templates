@@ -1,5 +1,5 @@
 //const mysqldb = require('./src/adapters/mysqldb')
-
+const logger = require('../services/winston');
 const mybusiness = require('../core/mybusiness');
 const to = require('await-to-js').default;
 var fs = require('fs');
@@ -11,10 +11,15 @@ require('../services/passport')
 module.exports = router => {
 
     //example of a secured route
-    router.get('/',passport.authenticate('jwt', { session: false }), async (req, res) => res.end('test service!'));
+    router.get('/',passport.authenticate('jwt', { session: false }), 
+    async (req, res) => {
+        logger.info('this is how you call a logger');
+        res.send('test service!')
+    });
     
 
-    router.get('/findgitusers',passport.authenticate('jwt', { session: false }), async (req,res)=>{
+    router.get('/findgitusers',passport.authenticate('jwt', { session: false }), 
+    async (req,res)=>{
         let error, result, finaljson;
         //----------------only modify this portion--------------
         [error, result] = await to(mybusiness.findGitUsers());
