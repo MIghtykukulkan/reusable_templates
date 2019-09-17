@@ -21,7 +21,7 @@ require('./src/routes/auth')(app);
 require('./src/routes/admin')(app);
 
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+module.exports = app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 
 //to-do

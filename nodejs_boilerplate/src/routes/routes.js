@@ -14,7 +14,7 @@ module.exports = router => {
     router.get('/',passport.authenticate('jwt', { session: false }), async (req, res) => res.end('test service!'));
     
 
-    router.get('/findgitusers',async (req,res)=>{
+    router.get('/findgitusers',passport.authenticate('jwt', { session: false }), async (req,res)=>{
         let error, result, finaljson;
         //----------------only modify this portion--------------
         [error, result] = await to(mybusiness.findGitUsers());
