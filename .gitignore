@@ -1,4 +1,5 @@
 /node_modules
 /nodejs_boilerplate/node_modules
 /socketio/node_modules
+/nodejs-soapcall/node_modules
 /uploads
